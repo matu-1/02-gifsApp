@@ -1,0 +1,20 @@
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+  <div class="col" *ngFor="let item of results">
+    <div class="card">
+      <img
+        #img
+        [src]="item.images.downsized_large.url"
+        class="card-img-top loading"
+        [alt]="item.title"
+        (load)="onLoadImg(img)"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ item.title }}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-info mt-4" *ngIf="results?.length == 0">
+  Sin Resultados :(
+</div>

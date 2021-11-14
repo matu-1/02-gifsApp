@@ -1,0 +1,16 @@
+<!-- <aside id="sidebar"> -->
+<h1>GifsApp</h1>
+<hr />
+<ul class="list-group" *ngIf="historial.length > 0; else noData">
+  <a
+    *ngFor="let item of historial"
+    href="#"
+    (click)="buscar(item)"
+    class="list-group-item list-group-item-action"
+    >{{ item | titlecase }}</a
+  >
+</ul>
+<ng-template #noData>
+  <h6>Sin Historial</h6>
+</ng-template>
+<!-- </aside> -->
